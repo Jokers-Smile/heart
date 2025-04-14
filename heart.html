@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态心形</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            font-size: 20px;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ff3366;">❤️ 跳动的心形 ❤️</h1>
+    <pre id="heart"></pre>
+    <script>
+        const colors = ["#FF3366", "#FF3399", "#FF6633", "#33FF99", "#66FFCC"];
+        let scale = 1.0;
+        let width = 30;
+        let height = 15;
+
+        function generateHeart(scale) {
+            let heart = '';
+            for (let y = height; y >= -height; y--) {
+                let line = '';
+                for (let x = -2 * width; x < 2 * width; x++) {
+                    let x0 = x * 0.05 * scale;
+                    let y0 = y * 0.1 * scale;
+                    let expr = Math.pow((Math.pow(x0, 2) + Math.pow(y0, 2) - 1), 3) - Math.pow(x0, 2) * Math.pow(y0, 3);
+                    if (expr <= 0) {
+                        let color = colors[Math.floor((x + y) % colors.length)];
+                        line += `<span style="color:${color};">${'❤'}</span>`;
+                    } else {
+                        line += " ";
+                    }
+                }
+                heart += line + '\n';
+            }
+            return heart;
+        }
+
+        function updateHeart() {
+            document.getElementById("heart").innerHTML = generateHeart(scale);
+            scale = scale === 1.0 ? 1.1 : scale === 1.1 ? 1.2 : scale === 1.2 ? 1.1 : 1.0;
+        }
+
+        setInterval(updateHeart, 200);  // 每200ms更新一次心形
+    </script>
+</body>
+</html>
