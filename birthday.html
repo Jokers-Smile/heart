@@ -34,14 +34,13 @@
     }
 
     .flame {
-      left:50%;
       display: inline-block;
       animation: flicker 1s infinite alternate ease-in-out;
       transform-origin: center bottom;
     }
 
     @keyframes flicker {
-      0% { transform: scale(1)translate(0, 0); }
+      0% { transform: scale(1); }
       50% { transform: scale(1.4); }
       100% { transform: scale(0.8); }
     }
@@ -50,7 +49,7 @@
 <body>
   <h1>🎂 生日快乐小妞儿 🎂</h1>
   <div class="cake">
-        <span class="flame">🔥</span>       <span class="flame">🔥</span>       <span class="flame">🔥</span>
+<span class="flame">🔥</span>       <span class="flame">🔥</span>       <span class="flame">🔥</span>
   🎂            🎂            🎂
   🎂            🎂            🎂
   🎂            🎂            🎂
