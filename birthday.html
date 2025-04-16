@@ -2,57 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Birthday Cake</title>
+  <title>🎂 动态蛋糕 🎂</title>
   <style>
     body {
-      background: #fffaf4;
+      background-color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-size: 20px;
-      line-height: 1;
-      white-space: pre;
       font-family: monospace;
-    }
-
-    .flame {
-      display: inline-block;
-      animation: flicker 1s infinite alternate ease-in-out;
-      transform-origin: center bottom;
-    }
-
-    @keyframes flicker {
-      0%   { transform: scale(1); }
-      50%  { transform: scale(1.3); }
-      100% { transform: scale(0.8); }
+      white-space: pre;
+      font-size: 16px;
+      line-height: 1.1;
     }
 
     .cake {
       text-align: center;
     }
+
+    .flame {
+      display: inline-block;
+      animation: flicker 1s infinite ease-in-out alternate;
+      transform-origin: center bottom;
+    }
+
+    @keyframes flicker {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.4); }
+      100% { transform: scale(0.8); }
+    }
   </style>
 </head>
 <body>
   <div class="cake">
-🔥🔥🔥  
-🎂🎂🎂  
-🎂🎂🎂  
-🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
-🎂🎂🎂🎂🎂🎂🎂🎂🎂  
+        <span class="flame">🔥</span>     <span class="flame">🔥</span>     <span class="flame">🔥</span>
+        🎂     🎂     🎂
+        🎂     🎂     🎂
+        🎂     🎂     🎂
+      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+    🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+    🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+  🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+  🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
   </div>
-
-  <script>
-    // 替换顶部的 🔥 为带动画的 span
-    const cake = document.querySelector('.cake');
-    cake.innerHTML = cake.innerHTML.replace(/🔥/g, '<span class="flame">🔥</span>');
-  </script>
 </body>
 </html>
