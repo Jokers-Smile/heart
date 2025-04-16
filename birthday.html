@@ -1,54 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <title>🎂 动态蛋糕 🎂</title>
+  <title>🎂跳动的蛋糕🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background-color: #000;
+      color: #ff5c8a;
+      margin: 0;
+      padding: 0;
       font-family: monospace;
-      white-space: pre;
-      font-size: 16px;
-      line-height: 1.1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      font-size: 6vw;
+      text-align: center;
+      color: #ff5c8a;
     }
 
     .cake {
+      font-size: 3vw;
+      white-space: pre;
+      line-height: 1.8;
       text-align: center;
     }
 
     .flame {
       display: inline-block;
-      animation: flicker 1s infinite ease-in-out alternate;
+      animation: flicker 1s infinite alternate ease-in-out;
       transform-origin: center bottom;
     }
 
     @keyframes flicker {
-      0%   { transform: scale(1); }
-      50%  { transform: scale(1.4); }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.4); }
       100% { transform: scale(0.8); }
     }
   </style>
 </head>
 <body>
+  <h1>🎂 跳动的蛋糕 🎂</h1>
   <div class="cake">
-        <span class="flame">🔥</span>     <span class="flame">🔥</span>     <span class="flame">🔥</span>
-        🎂     🎂     🎂
-        🎂     🎂     🎂
-        🎂     🎂     🎂
-      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-      🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-    🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-    🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-  🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-  🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
-🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+        <span class="flame">🔥</span>       <span class="flame">🔥</span>       <span class="flame">🔥</span>
+        🎂       🎂       🎂
+        🎂       🎂       🎂
+        🎂       🎂       🎂
+      🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+      🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+      🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+      🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+    🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+    🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+  🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+  🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
+🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂 🎂
   </div>
 </body>
 </html>
