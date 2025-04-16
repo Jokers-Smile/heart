@@ -5,59 +5,72 @@
   <title>🎂 跳动的蛋糕 🎂</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
+      background-color: black;
+      color: white;
       font-family: monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       height: 100vh;
-      overflow: hidden;
+      margin: 0;
+      padding-top: 30px;
     }
+
     h1 {
       color: #ffcc00;
+      margin-bottom: 20px;
     }
-    .cake {
+
+    pre {
       font-size: 16px;
       line-height: 1.2;
+      white-space: pre;
       text-align: center;
-      transform: scale(1);
       transition: transform 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+      pre {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
   <h1>🎂 跳动的蛋糕 🎂</h1>
-  <pre id="cake" class="cake"></pre>
+  <pre id="cake"></pre>
 
   <script>
-    const cakeFrames = [
-`         🍓🍓🍓🍓
-       🎂🎂🎂🎂🎂🎂
-     🎂🎂🎂🎂🎂🎂🎂🎂
-   🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
- 🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂`,
-
-`         🍒🍒🍒🍒
-       🎂🎂🎂🎂🎂🎂
-     🎂🎂🎂🎂🎂🎂🎂🎂
-   🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
- 🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂`
-    ];
-
     const cakeEl = document.getElementById("cake");
-    let scale = 1.0;
-    let frame = 0;
 
-    function animateCake() {
-      cakeEl.innerText = cakeFrames[frame % cakeFrames.length];
-      cakeEl.style.transform = `scale(${scale})`;
-      frame++;
-      scale = scale === 1.0 ? 1.1 : 1.0;
+    // 火苗动画帧（闪烁）
+    const flames = ["🔥", "✨", " "];
+
+    let scale = 1.0;
+
+    function generateCake() {
+      const flame1 = flames[Math.floor(Math.random() * flames.length)];
+      const flame2 = flames[Math.floor(Math.random() * flames.length)];
+      const flame3 = flames[Math.floor(Math.random() * flames.length)];
+
+      return `
+         ${flame1}   ${flame2}   ${flame3}
+         |   |   |
+       🎂🎂🎂🎂🎂🎂🎂
+     🎂🎂🎂🎂🎂🎂🎂🎂
+   🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+ 🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂🎂
+`;
     }
 
-    setInterval(animateCake, 400); // 控制跳动速度
+    function updateCake() {
+      cakeEl.innerText = generateCake();
+      cakeEl.style.transform = `scale(${scale})`;
+      scale = scale === 1.0 ? 1.05 : 1.0;
+    }
+
+    setInterval(updateCake, 400);
   </script>
 </body>
 </html>
